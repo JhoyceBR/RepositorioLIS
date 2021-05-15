@@ -2,8 +2,6 @@ import dataset from './model/dataset.js';
 import foodsModel from './model/food.js';
 
 const formFood = document.querySelector('#formFood');
-foodsModel.load(dataset);
-let foods = foodsModel.readAll();
 
 function loadFoods(){
 
@@ -13,7 +11,7 @@ function loadFoods(){
   }
 }
 
-
+let foods = foodsModel.readAll();
 
 for (const item of foods) {
   const itensDiv = document.getElementById('itens');
@@ -28,8 +26,8 @@ function addItem(item) {
       <img src='images/${item.image}' class='card-img-top'alt='...'>
         <div class='card-body'>
           <h5 class='card-title'>${item.name}</h5>
-          <p class='card-text text-justify'>${item.description}</p>
-          <a href='#' class='btn btn-primary'>Adicionar</a>
+          <p class='card-text text-center'>${item.description}</p>
+          <a href='#' class='btn btn-primary'>Voltar ao topo</a>
         </div>
       </div>
     </div>`;
